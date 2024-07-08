@@ -11,8 +11,20 @@
 # input: [500, 1, 2, 3, 4, 5]
 #expected output: "No medicine given"
 # HINT: using % operator to find remainder may be helpful
-def dose(needs):
-    #YOUR SOLUTION STARTS HERE
-
-    #YOUR SOLUTION ENDS HERE
-
+def dose(attributes):
+    import math
+    l = []
+    z = 0
+    m = 0
+    for i in attributes:
+        if int(i)>250:
+            z=1
+        else:
+            x = math.ceil(int(i)/10)
+            y = x*10 - int(i)
+            l.append((x,y))
+            m = m + int(i)
+    if z == 1 or m>=500:
+        return "No medicine given"
+    else:
+        return l
